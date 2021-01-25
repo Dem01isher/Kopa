@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/container"
-    android:background="@drawable/ic_splash_background"
-    tools:context=".MainActivity">
+    android:background="@color/background_layout"
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/imgLogo"
