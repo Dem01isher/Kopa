@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KopaShop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signIn">Вхід</string>
+    <string name="next">Далі</string>
+</resources>
