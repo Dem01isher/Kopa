@@ -39,6 +39,7 @@
         android:layout_marginEnd="30dp"
         android:hint="Enter Name"
         app:boxStrokeColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@id/textInputSecondName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            app:boxStrokeColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -64,6 +66,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:hint="Second name"
+        android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +79,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,6 +93,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:hint="Місто"
+        android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +106,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,6 +120,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:hint="Номер..."
+        android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +133,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,6 +147,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
         android:hint="Код верифікації номера"
+        android:textColorHint="@color/white"
         app:boxStrokeColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,6 +171,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:text="@string/next"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/white"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"

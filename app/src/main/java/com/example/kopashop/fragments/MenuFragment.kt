@@ -21,8 +21,6 @@ class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
     // This property is only valid between onCreateView and
 // onDestroyView.
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,28 +30,21 @@ class MenuFragment : Fragment() {
 
         return binding.root
 
-        /*
-        val bottomNavigationView = binding.bottomNavigationMain
-        val navController = findNavController(binding.fragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.firstFragment, R.id.secondFragment, R.id.thirdFragment))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.bottomNavigationMain.setupWithNavController(navController)
-        */
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpNavigation()
-        val navController = findNavController()
-        binding.bottomNavigationMain.setupWithNavController(navController)
+        val bottomNavigableView = binding.bottomNavigationMain
+
     }
+
 
     fun setUpNavigation() {
         val nestedNavHostFragment = childFragmentManager.findFragmentById(R.id.fragment) as? NavHostFragment
-        // val navController = nestedNavHostFragment?.navController
+        val navController = nestedNavHostFragment?.navController
         NavigationUI.setupWithNavController(binding.bottomNavigationMain,
                 nestedNavHostFragment?.navController!!)
+
     }
 }

@@ -16,7 +16,9 @@
         android:id="@+id/thirdFragment"
         android:name="com.example.kopashop.bottomNav.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third">
+
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.kopashop.bottomNav.SecondFragment"
@@ -26,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.kopashop.SettingsFragment"
+        android:name="com.example.kopashop.bottomNav.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 
