@@ -7,4 +7,6 @@
     <string name="code">code</string>
     <string name="category">category</string>
     <string name="someText">someText</string>
+    <string name="twitterUsername">twitter</string>
+    <string name="action_settings">Settings</string>
 </resources>
