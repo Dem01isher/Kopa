@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "681012575474",
+    "project_id": "kopashop-796e5",
+    "storage_bucket": "kopashop-796e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681012575474:android:a576487254641743b4a46b",
+        "android_client_info": {
+          "package_name": "com.example.kopashop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681012575474-mjikodtl3pgc1vn4kgkt3jflo96e8bg9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kopashop",
+            "certificate_hash": "74097cd246a9738a8331ef3a0f1c2e501bbf79ac"
+          }
+        },
+        {
+          "client_id": "681012575474-4d7iimtn431e3vb3868ivcofbeu1dkjr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALSI63zyi_VNTpNCeiEUSXY6OnppOR6Qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681012575474-4d7iimtn431e3vb3868ivcofbeu1dkjr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

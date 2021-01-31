@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="650dp"
+    android:layout_height="match_parent"
     android:background="@color/background_layout"
     tools:context=".bottomNav.SettingsFragment">
 
@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="Joey Tribbiani"
+            tools:text="Joey Tribbiani"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -54,7 +54,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            android:text="new york, usa"
+            tools:text="new york, usa"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -91,7 +91,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    tools:text="Email"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="joey@sharenofood.com"
+                    tools:text="joey@sharenofood.com"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -120,7 +120,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
+                    tools:text="Phone"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -128,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="+1-202-555-0157"
+                    tools:text="+1-202-555-0157"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -149,7 +149,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Twitter"
+                    tools:text="Twitter"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -178,7 +178,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Facebook"
+                    tools:text="Facebook"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -186,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="facebook.com/joeytrib"
+                    tools:text="facebook.com/joeytrib"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -207,7 +207,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Town"
+                    tools:text="Town"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -215,7 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Vinnitsia Ukraine"
+                    tools:text="Vinnitsia Ukraine"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
