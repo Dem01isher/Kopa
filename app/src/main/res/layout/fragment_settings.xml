@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="user"
+            type="com.example.kopashop.db.UserData" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_layout"
+        tools:ignore="MissingConstraints"
         android:paddingBottom="20dp">
 
         <RelativeLayout
@@ -30,7 +37,7 @@
                 android:background="@drawable/circle"
                 android:padding="3dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_logo" />
+                android:src="@drawable/ic_user" />
 
         </RelativeLayout>
 
@@ -42,7 +49,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            tools:text="Joey Tribbiani"
+            tools:text="@{user.name}"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -54,7 +61,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            tools:text="new york, usa"
+            tools:text="@{user.town}"
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -66,7 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rellay1"
-        android:orientation="horizontal"/>
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints" />
 
 
     <RelativeLayout
@@ -91,7 +99,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Email"
+                    android:text="Name"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -99,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="joey@sharenofood.com"
+                    tools:text="@{user.name}"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -120,7 +128,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Phone"
+                    android:text="Surname"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -128,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="+1-202-555-0157"
+                    tools:text="@{user.surname}"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -149,15 +157,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Twitter"
+                    android:text="Number"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="@string/twitterUsername"
+                    android:text="@{user.number}"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -178,7 +186,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Facebook"
+                    android:text="Town"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -186,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="facebook.com/joeytrib"
+                    tools:text="@{user.town}"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -207,7 +215,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Town"
+                    android:text="Town"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -215,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="Vinnitsia Ukraine"
+                    tools:text="@{user.verifNum}"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -232,4 +240,5 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

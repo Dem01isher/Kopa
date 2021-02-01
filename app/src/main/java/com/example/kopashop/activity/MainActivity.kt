@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.kopashop.R
@@ -14,6 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 
 import com.example.kopashop.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.iid.FirebaseInstanceId
 
 class MainActivity : AppCompatActivity() {
 

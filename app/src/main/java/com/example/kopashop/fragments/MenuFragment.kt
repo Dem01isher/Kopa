@@ -48,18 +48,4 @@ class MenuFragment : Fragment() {
                 nestedNavHostFragment?.navController!!)
 
     }
-    override fun onResume() {
-        super.onResume()
-        if (view == null) {
-            return
-        }
-        view!!.isFocusableInTouchMode = true
-        view!!.requestFocus()
-        view!!.setOnKeyListener { v, keyCode, event ->
-            if (event.action === KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-                // handle back button click listener
-                true
-            } else false
-        }
-    }
 }
