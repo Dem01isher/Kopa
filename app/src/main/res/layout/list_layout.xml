@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/background_layout"
     android:id="@+id/list_layout"
     android:layout_height="wrap_content">
 
@@ -16,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:paddingLeft="16dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/ic_logo" />
 
     <TextView
         android:id="@+id/bootsTitle"
@@ -24,6 +25,7 @@
         android:layout_height="16dp"
         android:layout_marginStart="20dp"
         android:text="TextView"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,6 +35,7 @@
         android:id="@+id/sizeBoots"
         android:layout_width="66dp"
         android:layout_height="14dp"
+        android:textColor="@color/white"
         android:layout_marginStart="20dp"
         android:text="@string/sizeBoots"
         android:textSize="10sp"
@@ -46,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:textColor="@color/white"
         android:text="@string/material"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,6 +64,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
         android:text="@string/standarts"
+        android:textColor="@color/white"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -73,6 +78,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/width"
         android:textSize="10sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,6 +88,7 @@
         android:id="@+id/lengthBoot2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/length"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"

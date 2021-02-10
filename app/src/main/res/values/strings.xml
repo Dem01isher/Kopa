@@ -14,4 +14,8 @@
     <string name="standarts">EU</string>
     <string name="length">Довжина / см</string>
     <string name="width">Ширина / см</string>
+    <!-- Facebook -->
+    <string name="facebook_app_id">5761018167257748</string>
+    <string name="fb_login_protocol_scheme">fb5761018167257748</string>
+
 </resources>
