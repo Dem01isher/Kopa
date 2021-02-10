@@ -43,6 +43,8 @@ android {
 dependencies {
 
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'com.google.firebase:firebase-firestore:22.0.2'
+    implementation 'com.google.firebase:firebase-storage:19.2.1'
     def nav_version = "2.3.2"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
@@ -62,6 +64,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -83,6 +86,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:18.0.2'
     implementation 'com.google.firebase:firebase-auth:20.0.2'
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    implementation 'com.google.firebase:firebase-database:19.6.0'
+    implementation 'com.firebaseui:firebase-ui-database:2.3.0'
 
     //    Glide Library
     implementation 'com.github.bumptech.glide:glide:4.11.0'
@@ -90,4 +95,7 @@ dependencies {
 
 //    Recycler View
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

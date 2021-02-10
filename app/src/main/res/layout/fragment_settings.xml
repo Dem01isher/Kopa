@@ -7,7 +7,6 @@
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_layout"
@@ -49,7 +48,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            tools:text="@{user.name}"
+            tools:text=""
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -61,7 +60,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
-            tools:text="@{user.town}"
+            tools:text=""
             android:textAllCaps="true"
             android:textColor="@color/address"
             android:textSize="14sp" />
@@ -107,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="@{user.name}"
+                    tools:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -136,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="@{user.surname}"
+                    tools:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -165,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="@{user.number}"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -194,7 +193,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="@{user.town}"
+                    tools:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -223,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    tools:text="@{user.verifNum}"
+                    tools:text=""
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

@@ -1,10 +1,12 @@
 package com.example.kopashop.bottomNav
 
-import android.R
+
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kopashop.databinding.FragmentFirstBinding
+import com.example.kopashop.db.RecyclerAdapter
 
 
 class FirstFragment : Fragment() {
@@ -23,5 +25,16 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.listView.layoutManager = LinearLayoutManager(context)
+        binding.listView.adapter = RecyclerAdapter(fillList())
     }
+
+    private fun fillList(): List<String> {
+        val data = mutableListOf<String>()
+        (0..30).forEach { i -> data.add("\$i elements")}
+        return data
+    }
+
+
 }
