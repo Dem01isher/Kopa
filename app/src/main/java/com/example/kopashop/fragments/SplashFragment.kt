@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentFirstBinding
 import com.example.kopashop.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class SplashFragment : Fragment() {
@@ -19,6 +20,7 @@ class SplashFragment : Fragment() {
     private lateinit var binding: FragmentSplashBinding
     // This property is only valid between onCreateView and
 // onDestroyView.
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,13 +32,25 @@ class SplashFragment : Fragment() {
 
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        auth = FirebaseAuth.getInstance()
+
+        val user = auth.currentUser
+
         Handler(Looper.getMainLooper())
                 .postDelayed({
-                    findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)
+                    if(user != null) {
+                        findNavController().navigate(R.id.action_splashFragment_to_menuFragment)
+                    } else {
+                        findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)
+                    }
                 }, 3000)
     }
 
 }
+
+// findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)

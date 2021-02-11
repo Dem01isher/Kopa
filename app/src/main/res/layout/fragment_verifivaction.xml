@@ -59,13 +59,11 @@
         app:layout_constraintLeft_toRightOf="@id/icPhone"
         app:layout_constraintRight_toLeftOf="@id/icGoogle" />
 
-    <ImageButton
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/icGoogle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:background="@null"
-        android:src="@drawable/ic_google_plus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/icFacebook"
         app:layout_constraintRight_toRightOf="parent" />

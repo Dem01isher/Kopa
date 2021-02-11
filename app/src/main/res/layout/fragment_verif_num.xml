@@ -39,14 +39,14 @@
         android:textSize="24sp"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputSecondName"
+        android:id="@+id/textInputNumber"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="30dp"
-        android:hint="Second name"
+        android:hint="+380"
         app:boxStrokeColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,11 +55,11 @@
         app:layout_constraintBottom_toTopOf="@id/vrfBtn">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextSecondName"
+            android:id="@+id/editTextNumber"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="number"
             android:textColorHint="@color/white"
             android:backgroundTint="@color/white"
             android:textSize="14sp" />
