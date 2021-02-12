@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -128,5 +129,19 @@ dependencies {
 
         // Also declare the dependency for the Google Play services library and specify its version
         implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    // Tiber
+    implementation 'com.github.ajalt:timberkt:1.5.1'
+
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.0")
+
+    dependencies {
+        // Import the BoM for the Firebase platform
+        implementation platform('com.google.firebase:firebase-bom:26.5.0')
+
+        // Declare the dependencies for the Crashlytics and Analytics libraries
+        // When using the BoM, you don't specify versions in Firebase library dependencies
+        implementation 'com.google.firebase:firebase-crashlytics'
+        implementation 'com.google.firebase:firebase-analytics'
+    }
     
 }

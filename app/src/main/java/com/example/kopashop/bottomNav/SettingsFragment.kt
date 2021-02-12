@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentSettingsBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -39,6 +42,14 @@ class SettingsFragment : Fragment() {
         binding.idText.text = currentUser?.uid
         binding.numberTxt.text = currentUser?.phoneNumber
         Glide.with(this).load(currentUser?.photoUrl).into(binding.imageUser)
+
+        binding.signOutBtn.setOnClickListener {
+            auth.signOut()
+            //findNavController().navigate(R.id.action_menuFragment_to_verificationFragment)
+            Toast.makeText(context?.applicationContext, "Sign out", Toast.LENGTH_SHORT).show()
+            binding.signOutBtn.visibility = View.GONE
+            binding.progressBar.visibility = View.VISIBLE
+        }
 
     }
 

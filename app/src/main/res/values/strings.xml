@@ -18,4 +18,6 @@
     <string name="facebook_app_id">5761018167257748</string>
     <string name="fb_login_protocol_scheme">fb5761018167257748</string>
 
+    <string name="signOut">Sign out</string>
+
 </resources>
