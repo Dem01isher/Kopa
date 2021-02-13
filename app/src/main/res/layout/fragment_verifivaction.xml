@@ -22,10 +22,12 @@
         android:layout_width="214dp"
         android:layout_height="114dp"
         android:src="@drawable/ic_ellipse"
-        app:layout_constraintBottom_toTopOf="@id/icFacebook"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgLogo"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintVertical_bias="0.108" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,6 +40,7 @@
         android:textSize="28sp"
         android:textColor="@color/white"/>
 
+    <!--
     <ImageButton
         android:id="@+id/icPhone"
         android:layout_width="wrap_content"
@@ -46,26 +49,42 @@
         android:background="@null"
         android:src="@drawable/ic_phone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/icFacebook" />
+        app:layout_constraintLeft_toLeftOf="parent" />
+        -->
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/icFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@color/headings"
+        android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/icPhone"
-        app:layout_constraintRight_toLeftOf="@id/icGoogle" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/icGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="195dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginRight="108dp"
+        android:layout_marginBottom="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/icFacebook"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/icPhone"
+        style="@style/MtButtonStyle"
+        android:layout_width="196dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="36dp"
+        app:icon="@drawable/ic_baseline_phone"
+        android:text="@string/signInWithPhoneNumber"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
 

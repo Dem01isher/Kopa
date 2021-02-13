@@ -37,9 +37,7 @@ class SettingsFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
 
-        binding.nameTxt.text = currentUser?.displayName
-        binding.emailTxt.text = currentUser?.email
-        binding.idText.text = currentUser?.uid
+        //binding.tvTown.text = currentUser?.
         binding.numberTxt.text = currentUser?.phoneNumber
         Glide.with(this).load(currentUser?.photoUrl).into(binding.imageUser)
 

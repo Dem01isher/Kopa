@@ -1,5 +1,7 @@
 package com.example.kopashop.fragments
 
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,19 +12,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentSplashBinding
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 
 
 class SplashFragment : Fragment() {
 
-
     private lateinit var binding: FragmentSplashBinding
     // This property is only valid between onCreateView and
 // onDestroyView.
     private lateinit var auth: FirebaseAuth
-    var currentFirebaseUser = FirebaseAuth.getInstance().currentUser
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,8 +32,6 @@ class SplashFragment : Fragment() {
 
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -43,7 +39,18 @@ class SplashFragment : Fragment() {
 
         val user = auth.currentUser
 
-        Handler(Looper.getMainLooper())
+        val connMgr = activity
+            ?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val networkInfo = connMgr.activeNetworkInfo
+
+        if (networkInfo != null && networkInfo.isConnected) {
+
+            binding.imgLogo.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.GONE
+            binding.tvLoading.visibility = View.GONE
+
+            Handler(Looper.getMainLooper())
                 .postDelayed({
                     if (user != null) {
                         findNavController().navigate(R.id.action_splashFragment_to_menuFragment)
@@ -51,9 +58,12 @@ class SplashFragment : Fragment() {
                         findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)
                     }
                 }, 3000)
-
+        } else {
+            binding.imgLogo.visibility = View.GONE
+            binding.progressBar.visibility = View.VISIBLE
+            binding.tvLoading.visibility = View.VISIBLE
+        }
     }
-
 }
 
 // findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)

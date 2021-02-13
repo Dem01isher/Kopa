@@ -19,5 +19,7 @@
     <string name="fb_login_protocol_scheme">fb5761018167257748</string>
 
     <string name="signOut">Sign out</string>
+    
+    <string name="signInWithPhoneNumber">Phone number</string>
 
 </resources>

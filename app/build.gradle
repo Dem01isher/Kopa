@@ -143,5 +143,7 @@ dependencies {
         implementation 'com.google.firebase:firebase-crashlytics'
         implementation 'com.google.firebase:firebase-analytics'
     }
+
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
     
 }
