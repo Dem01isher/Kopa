@@ -39,8 +39,8 @@ class SettingsFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
 
-        //binding.tvTown.text = currentUser?.
-        binding.numberTxt.text = currentUser?.phoneNumber
+        binding.tvNumber.text = currentUser?.phoneNumber
+        binding.tvEmail.text = currentUser?.email
         Picasso.get().load(currentUser?.photoUrl).transform(CircularTransformation()).into(binding.imageUser);
 
         binding.signOutBtn.setOnClickListener {
@@ -50,6 +50,7 @@ class SettingsFragment : Fragment() {
             binding.signOutBtn.visibility = View.GONE
             binding.progressBar.visibility = View.VISIBLE
         }
+
 
     }
 
