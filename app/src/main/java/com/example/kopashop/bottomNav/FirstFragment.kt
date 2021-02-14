@@ -36,7 +36,7 @@ class FirstFragment : Fragment() {
 
     private fun fillList(): List<String> {
         val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("\$i elements")}
+        (0..30).forEach { i -> data.add("\$Nike elements")}
         return data
     }
 

@@ -37,7 +37,7 @@ class RecyclerAdapter(private val values: List<String>): RecyclerView.Adapter<Re
         holder.bootsTitle.text = values[position]
         holder.sizeBoots.text = "44"
         Glide.with(holder.imageView.context)
-            .load("https://previews.123rf.com/images/tpabma/tpabma1110/tpabma111000239/10763295-sport-boots-.jpg")
+            .load(R.drawable.ic_logo)
             .into(holder.imageView)
         //holder.imageView =
         /*

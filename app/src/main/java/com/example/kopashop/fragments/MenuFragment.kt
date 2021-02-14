@@ -38,6 +38,10 @@ class MenuFragment : Fragment() {
         setUpNavigation()
         val bottomNavigableView = binding.bottomNavigationMain
 
+        binding.ivAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_addPostFragment)
+        }
+
     }
 
 

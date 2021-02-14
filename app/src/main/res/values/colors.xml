@@ -8,7 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_layout">#1F1F1F</color>
+    <color name="background_list">#343434</color>
     <color name="background_menu">#505051</color>
+    <color name="list_text">#9A9A9A</color>
+    <color name="list_price">#434343</color>
     <color name="button_color">#0CCDE6</color>
 
     <color name="address">#2F7092</color>
@@ -23,4 +26,5 @@
     <color name="grey">#E5E5E5</color>
     <color name="red">#FF0000</color>
     <color name="green">#4CAF50</color>
+    <color name="blue">#3F51B5</color>
 </resources>

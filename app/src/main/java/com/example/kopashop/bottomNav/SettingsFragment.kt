@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentSettingsBinding
+import com.example.kopashop.utils.CircularTransformation
 import com.google.firebase.auth.FirebaseAuth
+import com.squareup.picasso.Picasso
 
 
 class SettingsFragment : Fragment() {
@@ -39,7 +41,7 @@ class SettingsFragment : Fragment() {
 
         //binding.tvTown.text = currentUser?.
         binding.numberTxt.text = currentUser?.phoneNumber
-        Glide.with(this).load(currentUser?.photoUrl).into(binding.imageUser)
+        Picasso.get().load(currentUser?.photoUrl).transform(CircularTransformation()).into(binding.imageUser);
 
         binding.signOutBtn.setOnClickListener {
             auth.signOut()
