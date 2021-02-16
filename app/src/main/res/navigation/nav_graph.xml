@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/verifNumFragment"
-        android:name="com.example.kopashop.fragments.VerifNumFragment"
+        android:name="com.example.kopashop.view.phone_auth.VerifNumFragment"
         android:label="fragment_verif_num"
         tools:layout="@layout/fragment_verif_num">
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.example.kopashop.fragments.VerificationFragment"
+        android:name="com.example.kopashop.view.auth.VerificationFragment"
         android:label="fragment_verifivaction"
         tools:layout="@layout/fragment_verifivaction">
         <action
@@ -50,16 +50,21 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.kopashop.fragments.MenuFragment"
+        android:name="com.example.kopashop.view.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
             android:id="@+id/action_menuFragment_to_addPostFragment"
             app:destination="@id/addPostFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.kopashop.fragments.SplashFragment"
+        android:name="com.example.kopashop.view.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

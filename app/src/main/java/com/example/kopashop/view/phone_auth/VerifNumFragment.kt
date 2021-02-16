@@ -1,4 +1,4 @@
-package com.example.kopashop.fragments
+package com.example.kopashop.view.phone_auth
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -13,9 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentVerifNumBinding
 import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
-import com.google.firebase.firestore.auth.Token
 import java.util.concurrent.TimeUnit
 
 

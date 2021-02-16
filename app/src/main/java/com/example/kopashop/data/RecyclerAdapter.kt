@@ -1,4 +1,4 @@
-package com.example.kopashop.db
+package com.example.kopashop.data
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kopashop.R
 
-class RecyclerAdapter(private val values: List<String>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter{ //(private val values: List<String>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-
+    /*
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         lateinit var bootsTitle: TextView
         lateinit var sizeBoots: TextView
@@ -39,18 +39,9 @@ class RecyclerAdapter(private val values: List<String>): RecyclerView.Adapter<Re
         Glide.with(holder.imageView.context)
             .load(R.drawable.ic_logo)
             .into(holder.imageView)
-        //holder.imageView =
-        /*
-        val item = getItem(holder.adapterPosition)
-        holder.binding.titleTextView.text = item.title
 
-        val moviePosterURL = "https://image.tmdb.org/t/p/w500/" + item.posterPath
-        Glide.with(holder.itemView.context)
-            .load(moviePosterURL)
-            .into(holder.binding.posterImageView);
-
-         */
     }
 
     override fun getItemCount() = values.size
+     */
 }

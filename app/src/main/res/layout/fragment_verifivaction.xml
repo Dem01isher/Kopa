@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_layout"
-    tools:context=".fragments.VerificationFragment">
+    tools:context=".view.auth.VerificationFragment">
 
     <ImageView
         android:id="@+id/imgLogo"

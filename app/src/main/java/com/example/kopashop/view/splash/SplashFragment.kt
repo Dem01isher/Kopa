@@ -1,4 +1,4 @@
-package com.example.kopashop.fragments
+package com.example.kopashop.view.splash
 
 import android.content.Context
 import android.net.ConnectivityManager

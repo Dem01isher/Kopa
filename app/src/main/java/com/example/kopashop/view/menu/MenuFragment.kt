@@ -1,4 +1,4 @@
-package com.example.kopashop.fragments
+package com.example.kopashop.view.menu
 
 
 import android.os.Bundle
@@ -42,6 +42,8 @@ class MenuFragment : Fragment() {
             findNavController().navigate(R.id.action_menuFragment_to_addPostFragment)
         }
 
+
+
     }
 
 
@@ -51,5 +53,9 @@ class MenuFragment : Fragment() {
         NavigationUI.setupWithNavController(binding.bottomNavigationMain,
                 nestedNavHostFragment?.navController!!)
 
+    }
+
+    fun navigateToLogin() {
+        findNavController().navigate(R.id.action_menuFragment_to_verificationFragment)
     }
 }

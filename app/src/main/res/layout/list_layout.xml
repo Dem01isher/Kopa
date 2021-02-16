@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="10dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:background="@color/background_list"
     android:id="@+id/list_layout"
-    android:layout_marginTop="20dp"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -118,7 +123,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sizeBoots" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/lengthBoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -150,3 +155,4 @@
         app:layout_constraintBottom_toBottomOf="@id/bgPrice"
         android:layout_marginBottom="6dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

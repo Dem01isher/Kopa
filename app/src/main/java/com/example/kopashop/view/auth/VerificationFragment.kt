@@ -1,9 +1,8 @@
-package com.example.kopashop.fragments
+package com.example.kopashop.view.auth
 
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,14 +13,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.databinding.FragmentVerifivactionBinding
 import com.facebook.*
-import com.facebook.FacebookSdk.getApplicationContext
 import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -61,7 +58,6 @@ class VerificationFragment: Fragment() {
 
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
 
-        FacebookSdk.sdkInitialize(getApplicationContext());
 
         auth = FirebaseAuth.getInstance()
 

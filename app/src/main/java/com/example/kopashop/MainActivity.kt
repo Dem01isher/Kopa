@@ -1,4 +1,4 @@
-package com.example.kopashop.activity
+package com.example.kopashop
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity

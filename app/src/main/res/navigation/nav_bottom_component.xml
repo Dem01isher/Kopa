@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.example.kopashop.bottomNav.FirstFragment"
+        android:name="com.example.kopashop.view.list.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
 
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.kopashop.bottomNav.SettingsFragment"
+        android:name="com.example.kopashop.view.profile.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 
