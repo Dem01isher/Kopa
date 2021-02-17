@@ -25,5 +25,6 @@
 
 
     <string name="signInWithPhoneNumber">Phone number</string>
+    <string name="price">100$</string>
 
 </resources>

@@ -1,28 +1,16 @@
 package com.example.kopashop
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import com.example.kopashop.R
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
+import com.example.kopashop.core.activity.BaseBindingActivity
 
 import com.example.kopashop.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.iid.FirebaseInstanceId
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
-    private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(saveInstanceState: Bundle?) {
+        super.onCreate(saveInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         /*
@@ -31,4 +19,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigableView.setupWithNavController(navController)
         */
     }
+
+    override val layoutId: Int
+        get() = R.layout.activity_main
 }

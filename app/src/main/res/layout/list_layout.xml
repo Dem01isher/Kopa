@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout >
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     app:cardCornerRadius="10dp">
 
@@ -147,7 +149,7 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100$"
+        android:text="@string/price"
         android:textColor="@color/list_price"
         app:layout_constraintTop_toTopOf="@id/bgPrice"
         app:layout_constraintRight_toRightOf="@id/bgPrice"
@@ -156,3 +158,4 @@
         android:layout_marginBottom="6dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
+</layout>

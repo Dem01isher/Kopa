@@ -1,19 +1,20 @@
 package com.example.kopashop.model
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class BootsViewModel : ViewModel() {
 
-    var bootsList: MutableLiveData<List<Boots>> = MutableLiveData()
+    private val bootsList = MutableLiveData<List<Boots>>()
 
     init {
-        bootsList.value = BootsData.getBoots()
+        bootsList.postValue(BootsData.getBoots())
     }
 
-    fun getListBoots() = bootsList
+    fun getListBoots() : LiveData<List<Boots>> = bootsList
 
     fun updateListBoots() {
-        bootsList.value = BootsData.getBoots()
+        bootsList.postValue(BootsData.getBoots())
     }
 }
