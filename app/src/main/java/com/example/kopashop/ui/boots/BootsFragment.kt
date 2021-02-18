@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.boots
+package com.example.kopashop.ui.boots
 
 import android.os.Bundle
 import android.view.View
@@ -10,7 +10,7 @@ import kotlin.reflect.KClass
 
 class BootsFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
 
-    private val adapter: BootsAdapter = BootsAdapter ()
+    private val adapter: BootsAdapter = BootsAdapter()
 
     override val viewModelClass: KClass<BootsViewModel>
         get() = BootsViewModel::class
@@ -24,7 +24,7 @@ class BootsFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
     }
 
     private fun initObserves() {
-        viewModel.boots.nonNullObserve(viewLifecycleOwner){
+        viewModel.boots.nonNullObserve(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.register
+package com.example.kopashop.ui.register
 
 import android.os.Bundle
 import android.view.View

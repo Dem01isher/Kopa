@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.phone_auth
+package com.example.kopashop.ui.phone_auth
 
 import android.content.ContentValues.TAG
 import android.os.Bundle

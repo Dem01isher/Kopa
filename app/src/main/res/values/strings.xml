@@ -22,6 +22,7 @@
 
     <string name="signOut">Sign out</string>
     <string name="setEdit">Done</string>
+    <string name="save">Зберегти</string>
 
 
     <string name="signInWithPhoneNumber">Phone number</string>

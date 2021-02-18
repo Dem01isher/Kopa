@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background_layout"
-    tools:context=".presentation.add_post.AddPostFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.gigamole.navigationtabstrip.NavigationTabStrip
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:nts_active_color="#000"
-        app:nts_animation_duration="300"
-        app:nts_color="#000"
-        app:nts_corners_radius="1.5dp"
-        app:nts_factor="2.5"
-        app:nts_gravity="top"
-        app:nts_inactive_color="#c4c4c4"
-        app:nts_size="15sp"
-        app:nts_titles="@array/titles"
-        app:nts_type="point"
-        app:nts_typeface="fonts/typeface.otf"
-        app:nts_weight="3dp" />
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello world"
-        android:textColor="@color/white"/>
+        android:background="@color/background_layout"
+        tools:context=".ui.add_post.AddPostFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.list
+package com.example.kopashop.ui.list
 
 
 import android.os.Bundle
@@ -7,8 +7,8 @@ import com.example.kopashop.R
 import com.example.kopashop.core.extensions.nonNullObserve
 import com.example.kopashop.core.fragment.BaseVMFragment
 import com.example.kopashop.databinding.FragmentFirstBinding
-import com.example.kopashop.presentation.boots.BootsAdapter
-import com.example.kopashop.presentation.boots.BootsViewModel
+import com.example.kopashop.ui.boots.BootsAdapter
+import com.example.kopashop.ui.boots.BootsViewModel
 import kotlin.reflect.KClass
 
 
@@ -31,7 +31,7 @@ class FirstFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
         }
 
         binding.swipeRefreshLayout.setOnRefreshListener {
-
+            viewModel.getBoots()
         }
 
     }

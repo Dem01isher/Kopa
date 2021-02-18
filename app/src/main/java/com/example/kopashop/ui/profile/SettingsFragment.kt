@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.profile
+package com.example.kopashop.ui.profile
 
 import android.os.Bundle
 import android.view.View
@@ -7,13 +7,17 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.kopashop.R
 import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentSettingsBinding
-import com.example.kopashop.presentation.menu.MenuFragment
+import com.example.kopashop.ui.menu.MenuFragment
 import com.example.kopashop.utils.CircularTransformation
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 
 
 class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
+
+    override val layoutId: Int
+        get() = R.layout.fragment_settings
+
     private lateinit var auth: FirebaseAuth
 
 
@@ -54,9 +58,6 @@ class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
 
 
     }
-
-    override val layoutId: Int
-        get() = R.layout.fragment_settings
 
 
 }

@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_layout"
-        tools:context=".presentation.menu.MenuFragment">
+        tools:context=".ui.menu.MenuFragment">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_main"

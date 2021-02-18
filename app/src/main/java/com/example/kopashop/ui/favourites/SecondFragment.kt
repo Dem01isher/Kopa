@@ -1,29 +1,27 @@
-package com.example.kopashop.presentation.favourites
+package com.example.kopashop.ui.favourites
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.example.kopashop.R
+import com.example.kopashop.core.fragment.BaseVMFragment
+import com.example.kopashop.databinding.FragmentFirstBinding
 import com.example.kopashop.databinding.FragmentSecondBinding
+import com.example.kopashop.ui.boots.BootsViewModel
+import kotlin.reflect.KClass
 
-class SecondFragment : Fragment() {
+class SecondFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
 
-    private lateinit var binding: FragmentSecondBinding
-    // This property is only valid between onCreateView and
-// onDestroyView.
+    override val viewModelClass: KClass<BootsViewModel>
+        get() = BootsViewModel::class
+    override val layoutId: Int
+        get() = R.layout.fragment_second
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentSecondBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
+
 
 }

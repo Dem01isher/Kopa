@@ -1,4 +1,4 @@
-package com.example.kopashop.presentation.auth
+package com.example.kopashop.ui.auth
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -12,7 +12,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentVerifivactionBinding
-import com.facebook.*
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
 import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -24,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
-class VerificationFragment: BaseBindingFragment<FragmentVerifivactionBinding>(){
+class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>() {
 
     companion object {
         private const val RC_SIGN_IN = 120
@@ -36,14 +39,6 @@ class VerificationFragment: BaseBindingFragment<FragmentVerifivactionBinding>(){
     // This property is only valid between onCreateView and
 // onDestroyView.
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentVerifivactionBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -94,7 +89,7 @@ class VerificationFragment: BaseBindingFragment<FragmentVerifivactionBinding>(){
 
         binding.icGoogle.setOnClickListener {
             signIn()
-        //findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
+            //findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
         }
 
     }
@@ -157,8 +152,10 @@ class VerificationFragment: BaseBindingFragment<FragmentVerifivactionBinding>(){
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    Toast.makeText(context, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        context, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     updateUI(null)
                 }
 
@@ -167,7 +164,7 @@ class VerificationFragment: BaseBindingFragment<FragmentVerifivactionBinding>(){
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        if(user != null){
+        if (user != null) {
             binding.icFacebook.setOnClickListener {
                 findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
             }

@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.kopashop.presentation.boots.BootsViewModel" />
+            type="com.example.kopashop.ui.boots.BootsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
