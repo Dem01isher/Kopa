@@ -13,19 +13,19 @@ import com.example.kopashop.core.view_model.BaseViewModel
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import kotlin.reflect.KClass
 
-abstract class BaseVMActivity<VM: BaseViewModel, B : ViewDataBinding> : BaseBindingActivity<B>() {
+abstract class BaseVMActivity<VM : BaseViewModel, B : ViewDataBinding> : BaseBindingActivity<B>() {
 
     @MenuRes
     var menuId = -1
 
     protected abstract val viewModelClass: KClass<VM>
 
-    protected  lateinit var viewModel: VM
+    protected lateinit var viewModel: VM
 
-    override fun onCreate(saveInstanceState: Bundle?){
-        super.onCreate(saveInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        viewModel = getViewModel (clazz = viewModelClass)
+        viewModel = getViewModel(clazz = viewModelClass)
         binding.setVariable(BR.viewModel, viewModel)
 
         viewModel.showMessage.eventObserve(this) {
@@ -50,4 +50,5 @@ abstract class BaseVMActivity<VM: BaseViewModel, B : ViewDataBinding> : BaseBind
         val imm = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
+
 }

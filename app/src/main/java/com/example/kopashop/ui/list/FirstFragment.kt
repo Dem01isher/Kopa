@@ -2,109 +2,33 @@ package com.example.kopashop.ui.list
 
 
 import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import android.view.View
 import com.example.kopashop.R
-import com.example.kopashop.core.fragment.BaseBindingFragment
+import com.example.kopashop.core.extensions.nonNullObserve
 import com.example.kopashop.core.fragment.BaseVMFragment
 import com.example.kopashop.databinding.FragmentFirstBinding
-import com.example.kopashop.model.BootsViewModel
-import com.google.firebase.database.DatabaseReference
+import com.example.kopashop.presentation.boots.BootsAdapter
+import com.example.kopashop.presentation.boots.BootsViewModel
+import kotlin.reflect.KClass
 
 
-class FirstFragment : BaseBindingFragment<FragmentFirstBinding>() {
+class FirstFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
 
-    private lateinit var database: DatabaseReference
-    /*
-    private val model: BootsViewModel by lazy {
-        ViewModelProviders.of(this).get(BootsViewModel::class.java)
-    }
-     */
+    override val layoutId: Int
+        get() = R.layout.fragment_first
+    override val viewModelClass: KClass<BootsViewModel>
+        get() = BootsViewModel::class
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentFirstBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    private val adapter: BootsAdapter = BootsAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.listView.adapter
-    }
-
-    override val layoutId: Int
-        get() = R.layout.fragment_first
-
-}
-
-
-    /*
-    private fun writeNewPost(title: String,
-                             width: Int,
-                             price: Int,
-                             length: Int,
-                             material: String) {
-        val key = database.child("posts").push().key
-        if (key == null) {
-            Log.w(TAG, "Couldn't get push key for posts")
-            return
-        }
-
-        val post = Boots(title, width, price, length, material)
-        val postValues = post.toMap()
-
-        val childUpdates = hashMapOf<String, Any>(
-            "/posts/$key" to postValues,
-            "boots-posts/$title/$key" to postValues
-        )
-
-        database.updateChildren(childUpdates)
-    }
-}
-
-     */
-        /*
-        val divItemDecor = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
-
-        val adapter = BootsAdapter()
-        binding.listView.layoutManager = LinearLayoutManager(context)
         binding.listView.adapter = adapter
 
-        binding.listView.addItemDecoration(divItemDecor)
-
-        model.getListBoots().observe(viewLifecycleOwner, Observer {
-            it?.let {
-                adapter.refreshList(it)
-            }
-        })
-
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            binding.swipeRefreshLayout.isRefreshing.not()
+        viewModel.boots.nonNullObserve(viewLifecycleOwner){
+            adapter.submitList(it)
         }
-    }
-    */
-        /*
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.id.swipeRefreshLayout -> {
-                model.updateListBoots()
-            }
-        }
-        return super.onOptionsItemSelected(item)
+
     }
 }
-
-         */
-    /*
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("\$Nike elements")}
-        return data
-    }
-     */

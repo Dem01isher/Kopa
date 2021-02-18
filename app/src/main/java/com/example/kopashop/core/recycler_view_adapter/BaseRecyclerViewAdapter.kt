@@ -7,7 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 
-abstract class BaseRecyclerViewAdapter<T, Binding: ViewDataBinding>(
+abstract class BaseRecyclerViewAdapter<T, Binding : ViewDataBinding>(
     diffCallback: DiffUtil.ItemCallback<T>
 ) : ListAdapter<T, BindingHolder<Binding>>(diffCallback) {
 
@@ -17,4 +17,5 @@ abstract class BaseRecyclerViewAdapter<T, Binding: ViewDataBinding>(
         BindingHolder(
             DataBindingUtil.inflate(LayoutInflater.from(parent.context), layoutId, parent, false)
         )
+
 }

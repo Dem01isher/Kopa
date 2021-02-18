@@ -46,6 +46,18 @@ abstract class BaseFragment : Fragment() {
         toast?.show()
     }
 
+
+    fun hideKeyboard(activity: Activity?) {
+        if (activity != null) {
+            val imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            var view = activity.currentFocus
+            if (view == null) {
+                view = View(activity)
+            }
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
     fun focusView(view: View, activity: Activity?) {
         if (activity != null) {
             view.requestFocus()
@@ -62,5 +74,4 @@ abstract class BaseFragment : Fragment() {
     }
 
     protected open fun initNavController(): NavController = findNavController()
-
 }

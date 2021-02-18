@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
+import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentRegisterBinding
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : BaseBindingFragment<FragmentRegisterBinding>() {
 
-    private lateinit var binding: FragmentRegisterBinding
     // This property is only valid between onCreateView and
 // onDestroyView.
 
@@ -32,5 +32,8 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_menuFragment)
         }
     }
+
+    override val layoutId: Int
+        get() = R.layout.fragment_register
 
 }

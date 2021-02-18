@@ -1,4 +1,4 @@
-package com.example.kopashop.model
+package com.example.kopashop.presentation.boots
 
 object BootsData {
 

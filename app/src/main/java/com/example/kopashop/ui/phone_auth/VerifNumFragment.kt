@@ -11,15 +11,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
+import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentVerifNumBinding
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 
 
-class VerifNumFragment : Fragment() {
+class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
-    private lateinit var binding: FragmentVerifNumBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var verifyId: String
 
@@ -141,4 +141,7 @@ class VerifNumFragment : Fragment() {
             signInWithPhoneAuthCredential(credential)
         }
     }
+
+    override val layoutId: Int
+        get() = R.layout.fragment_verif_num
 }

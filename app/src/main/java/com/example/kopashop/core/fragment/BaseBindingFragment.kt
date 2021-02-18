@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 
-abstract class BaseBindingFragment<Binding: ViewDataBinding> : BaseFragment() {
+abstract class BaseBindingFragment<Binding : ViewDataBinding> : BaseFragment() {
 
     protected lateinit var binding: Binding
 
@@ -18,12 +18,12 @@ abstract class BaseBindingFragment<Binding: ViewDataBinding> : BaseFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) : View? {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding.root
     }
 
-    fun getChildNavController(@IdRes fragmentId: Int) : NavController? {
+    fun getChildNavController(@IdRes fragmentId: Int): NavController? {
         val childFragment = (childFragmentManager.findFragmentById(fragmentId) as? NavHostFragment)
 
         return childFragment?.navController

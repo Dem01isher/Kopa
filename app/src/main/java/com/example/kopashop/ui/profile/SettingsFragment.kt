@@ -1,12 +1,11 @@
 package com.example.kopashop.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
+import com.example.kopashop.R
+import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentSettingsBinding
 import com.example.kopashop.ui.menu.MenuFragment
 import com.example.kopashop.utils.CircularTransformation
@@ -14,23 +13,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 
 
-class SettingsFragment : Fragment() {
-    private lateinit var binding: FragmentSettingsBinding
+class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
     private lateinit var auth: FirebaseAuth
 
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
-        binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +25,8 @@ class SettingsFragment : Fragment() {
 
         binding.tvNumber.text = currentUser?.phoneNumber
         binding.tvEmail1.text = currentUser?.email
-        Picasso.get().load(currentUser?.photoUrl).transform(CircularTransformation()).into(binding.imageUser);
+        Picasso.get().load(currentUser?.photoUrl).transform(CircularTransformation())
+            .into(binding.imageUser);
 
         binding.signOutBtn.setOnClickListener {
             auth.signOut()
@@ -68,6 +54,9 @@ class SettingsFragment : Fragment() {
 
 
     }
+
+    override val layoutId: Int
+        get() = R.layout.fragment_settings
 
 
 }

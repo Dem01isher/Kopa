@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 
-abstract class BaseBindingActivity<Binding: ViewDataBinding> : AppCompatActivity() {
+abstract class BaseBindingActivity<Binding : ViewDataBinding> : AppCompatActivity() {
 
     @get:LayoutRes
     protected abstract val layoutId: Int
@@ -20,8 +20,8 @@ abstract class BaseBindingActivity<Binding: ViewDataBinding> : AppCompatActivity
 
     private var toast: Toast? = null
 
-    override fun onCreate(saveInstanceState: Bundle?) {
-        super.onCreate(saveInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, layoutId)
     }
@@ -39,7 +39,7 @@ abstract class BaseBindingActivity<Binding: ViewDataBinding> : AppCompatActivity
         toast?.show()
     }
 
-    fun getNavController(@IdRes fragmentId: Int) : NavController {
+    fun getNavController(@IdRes fragmentId: Int): NavController {
         val fragment = (supportFragmentManager.findFragmentById(fragmentId) as NavHostFragment)
 
         return fragment.navController

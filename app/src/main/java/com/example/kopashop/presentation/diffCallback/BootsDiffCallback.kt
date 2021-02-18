@@ -2,12 +2,13 @@ package com.example.kopashop.presentation.diffCallback
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.kopashop.domain.responses.BootsResponse
+import com.example.kopashop.presentation.boots.Boots
 
-class BootsDiffCallback : DiffUtil.ItemCallback<BootsResponse>() {
-    override fun areItemsTheSame(oldItem: BootsResponse, newItem: BootsResponse): Boolean =
-        oldItem.id == newItem.id
+class BootsDiffCallback : DiffUtil.ItemCallback<Boots>() {
+    override fun areItemsTheSame(oldItem: Boots, newItem: Boots): Boolean =
+        oldItem == newItem
 
 
-    override fun areContentsTheSame(oldItem: BootsResponse, newItem: BootsResponse): Boolean =
+    override fun areContentsTheSame(oldItem: Boots, newItem: Boots): Boolean =
         oldItem == newItem
 }

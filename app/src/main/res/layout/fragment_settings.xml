@@ -4,7 +4,7 @@
     <data>
         <variable
             name="user"
-            type="com.example.kopashop.model.BootsData" />
+            type="com.example.kopashop.presentation.boots.BootsData" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

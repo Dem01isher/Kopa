@@ -9,18 +9,19 @@ import androidx.recyclerview.widget.ListAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.presentation.diffCallback.BootsDiffCallback
 
-abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
+abstract class MultiSelectionAdapter<T, Binding : ViewDataBinding>(
     private val onClick: (T) -> Unit,
     private val permanentSelecting: Boolean = false,
     diffCallback: DiffUtil.ItemCallback<T>
 ) : ListAdapter<T, BindingHolder<Binding>>(diffCallback) {
+
     protected abstract val layoutId: Int
 
-    private val multiSelectionCallback: MultiSelectionCallback? = null
+    private var multiSelectionCallback: MultiSelectionCallback? = null
     private var maxSize: Int? = null
 
     private var isSelectingMode: Boolean = false
-    private val selectedItems = mutableListOf<T>()
+    private var selectedItems = mutableListOf<T>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingHolder<Binding> =
         BindingHolder(
@@ -40,7 +41,7 @@ abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
     }
 
     private fun initListeners(holder: BindingHolder<Binding>, item: T) {
-        holder.binding.root.setOnClickListener{
+        holder.binding.root.setOnClickListener {
             if (!isSelectingMode) {
                 onClick(item)
             } else {
@@ -50,7 +51,7 @@ abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
                     multiSelectionCallback?.selectionSize(selectedItems.size)
 
                     animateItemDeselected(holder)
-                    if(selectedItems.isEmpty() && !permanentSelecting) {
+                    if (selectedItems.isEmpty() && !permanentSelecting) {
                         isSelectingMode = false
 
                         multiSelectionCallback?.selectionDisable()
@@ -73,9 +74,12 @@ abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
 
                         animateItemSelected(holder)
                     }
+
+
                 }
             }
         }
+
         if (!permanentSelecting) {
             holder.binding.root.setOnLongClickListener {
                 if (!isSelectingMode) {
@@ -83,7 +87,6 @@ abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
                     multiSelectionCallback?.selectionEnable()
 
                     isSelectingMode = true
-
                     selectedItems.add(item)
 
                     multiSelectionCallback?.selectionSize(selectedItems.size)
@@ -91,15 +94,36 @@ abstract class MultiSelectionAdapter<T, Binding: ViewDataBinding>(
                     animateItemSelected(holder)
                     return@setOnLongClickListener true
                 }
+
                 return@setOnLongClickListener false
             }
         }
     }
 
+    fun getSelectedItems() = selectedItems
+
+    fun enableSelectingMode() {
+        multiSelectionCallback?.selectionEnable()
+        isSelectingMode = true
+    }
+
+    fun disableSelectingMode() {
+        multiSelectionCallback?.selectionDisable()
+        isSelectingMode = false
+    }
+
+    fun setOnSelectingCallback(multiSelectionCallback: MultiSelectionCallback) {
+        this.multiSelectionCallback = multiSelectionCallback
+    }
+
+    fun setMaxSelectionSize(maxSize: Int) {
+        this.maxSize = maxSize
+    }
 
     abstract fun itemSelected(holder: BindingHolder<Binding>)
     abstract fun itemNotSelected(holder: BindingHolder<Binding>)
 
     abstract fun animateItemSelected(holder: BindingHolder<Binding>)
     abstract fun animateItemDeselected(holder: BindingHolder<Binding>)
+
 }

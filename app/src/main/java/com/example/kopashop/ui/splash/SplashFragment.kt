@@ -11,13 +11,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
+import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentSplashBinding
 import com.google.firebase.auth.FirebaseAuth
 
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseBindingFragment<FragmentSplashBinding>() {
 
-    private lateinit var binding: FragmentSplashBinding
     // This property is only valid between onCreateView and
 // onDestroyView.
     private lateinit var auth: FirebaseAuth
@@ -64,6 +64,9 @@ class SplashFragment : Fragment() {
             binding.tvLoading.visibility = View.VISIBLE
         }
     }
+
+    override val layoutId: Int
+        get() = R.layout.fragment_splash
 }
 
 // findNavController().navigate(R.id.action_splashFragment_to_verificationFragment)
