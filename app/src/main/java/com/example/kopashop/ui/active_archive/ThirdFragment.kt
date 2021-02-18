@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.active_archive
+package com.example.kopashop.presentation.active_archive
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,7 +1,7 @@
-package com.example.kopashop.presentation.application
+package com.example.kopashop
 
 import android.app.Application
-import com.example.kopashop.di.remoteDataSourceModule
+import com.example.kopashop.di.firebaseDataSourceModule
 import com.example.kopashop.di.repositoriesModule
 import com.example.kopashop.di.viewModelsModule
 import com.facebook.FacebookSdk
@@ -20,7 +20,7 @@ class Application : Application() {
             androidContext(this@Application)
             androidLogger()
             modules(
-                remoteDataSourceModule,
+                firebaseDataSourceModule,
                 repositoriesModule,
                 viewModelsModule
             )

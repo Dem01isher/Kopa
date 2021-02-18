@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_layout"
-        tools:context=".ui.phone_auth.VerifNumFragment">
+        tools:context=".presentation.phone_auth.VerifNumFragment">
 
         <ImageView
             android:id="@+id/imgLogo"

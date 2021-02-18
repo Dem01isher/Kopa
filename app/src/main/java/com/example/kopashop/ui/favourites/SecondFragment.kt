@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.favourites
+package com.example.kopashop.presentation.favourites
 
 import android.os.Bundle
 import android.view.LayoutInflater

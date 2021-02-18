@@ -1,14 +1,11 @@
-package com.example.kopashop.ui.phone_auth
+package com.example.kopashop.presentation.phone_auth
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
 import com.example.kopashop.core.fragment.BaseBindingFragment
@@ -23,19 +20,6 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
     private lateinit var auth: FirebaseAuth
     private lateinit var verifyId: String
 
-    //val phoneNum = binding.editTextNumber.toString()
-    val testVerificationCode = "123456"
-
-// onDestroyView.
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentVerifNumBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,8 +28,8 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
 
         binding.vrfBtn.setOnClickListener {
-                //findNavController().navigate(R.id.action_verifNumFragment_to_registerFragment)
-            if (validateMobile(binding.editTextNumber.text.toString())){
+            //findNavController().navigate(R.id.action_verifNumFragment_to_registerFragment)
+            if (validateMobile(binding.editTextNumber.text.toString())) {
                 signIn()
                 binding.textInputNumber.visibility = View.GONE
                 binding.vrfBtn.visibility = View.GONE
@@ -70,8 +54,11 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
 
     }
-    private fun validateMobile(input: String): Boolean{
-        if (input.isNotEmpty() && Patterns.PHONE.matcher(binding.editTextNumber.text.toString()).matches()) {
+
+    private fun validateMobile(input: String): Boolean {
+        if (input.isNotEmpty() && Patterns.PHONE.matcher(binding.editTextNumber.text.toString())
+                .matches()
+        ) {
             Toast.makeText(
                 context?.applicationContext,
                 "Validated Successfully",
@@ -79,31 +66,32 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
             ).show()
             return true
         } else {
-            Toast.makeText(context?.applicationContext, "Invalid phone number", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context?.applicationContext, "Invalid phone number", Toast.LENGTH_SHORT)
+                .show()
             return false
         }
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
-                .addOnCompleteListener() { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithCredential:success")
+            .addOnCompleteListener() { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
 
-                        val user = task.result?.user
-                        // ...
-                    } else {
-                        // Sign in failed, display a message and update the UI
-                        Log.w(TAG, "signInWithCredential:failure", task.exception)
-                        if (task.exception is FirebaseAuthInvalidCredentialsException) {
-                            // The verification code entered was invalid
-                        }
+                    val user = task.result?.user
+                    // ...
+                } else {
+                    // Sign in failed, display a message and update the UI
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
+                        // The verification code entered was invalid
                     }
                 }
+            }
     }
 
-    private fun signIn(){
+    private fun signIn() {
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(binding.editTextNumber.text.toString())
             .setTimeout(30L, TimeUnit.SECONDS)

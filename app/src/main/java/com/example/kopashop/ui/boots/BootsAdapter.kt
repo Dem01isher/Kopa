@@ -1,17 +1,12 @@
 package com.example.kopashop.presentation.boots
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.view.menu.ListMenuItemView
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.ListLayoutBinding
-import com.example.kopashop.domain.responses.BootsResponse
-import com.example.kopashop.presentation.diffCallback.BootsDiffCallback
+import com.example.kopashop.domain.models.response.Boots
+import com.example.kopashop.utils.BootsDiffCallback
 
 class BootsAdapter() :
         BaseRecyclerViewAdapter<Boots, ListLayoutBinding>(BootsDiffCallback()) {
@@ -22,11 +17,16 @@ class BootsAdapter() :
 
         override fun onBindViewHolder(holder: BindingHolder<ListLayoutBinding>, position: Int) {
                 val item = getItem(holder.adapterPosition)
-                holder.binding.bootsTitle.text = item.title
+                holder.binding.title.text = item.title
+                holder.binding.price.text = item.price.toString()
+                holder.binding.bootsLength.text = item.bootsLength.toString()
+                holder.binding.width.text = item.width.toString()
+                holder.binding.materialTitle.text = item.material
                 // Check BootsResponse
+
                 Glide.with(holder.itemView.context)
-                        .load("https://sportspage-feeds.p.rapidapi.com/games")
-                        .into(holder.binding.imageView)
+                        .load(item.imageUrl)
+                        .into(holder.binding.image)
         }
 
 

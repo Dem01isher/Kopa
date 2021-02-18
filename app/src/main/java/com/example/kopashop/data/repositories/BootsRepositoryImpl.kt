@@ -1,10 +1,10 @@
 package com.example.kopashop.data.repositories
 
-import com.example.kopashop.data.source.remote.RemoteDataSource
+import com.example.kopashop.data.source.remote.FirebaseDataSource
 import com.example.kopashop.domain.repositories.BootsRepository
-import com.example.kopashop.presentation.boots.Boots
+import com.example.kopashop.domain.models.response.Boots
 import io.reactivex.Single
 
-class BootsRepositoryImpl(private val remoteDataSource: RemoteDataSource) : BootsRepository {
-    override fun getBoots(): Single<List<Boots>> = remoteDataSource.getBoots()
+class BootsRepositoryImpl(private val firebaseDataSource: FirebaseDataSource) : BootsRepository {
+    override fun getBoots(): Single<List<Boots>> = firebaseDataSource.getBoots()
 }

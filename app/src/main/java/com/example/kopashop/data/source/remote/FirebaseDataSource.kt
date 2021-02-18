@@ -1,9 +1,8 @@
 package com.example.kopashop.data.source.remote
 
-import com.example.kopashop.presentation.boots.Boots
+import com.example.kopashop.domain.models.response.Boots
 import io.reactivex.Single
-import retrofit2.http.GET
 
-interface RemoteDataSource {
+interface FirebaseDataSource {
     fun getBoots(): Single<List<Boots>>
 }

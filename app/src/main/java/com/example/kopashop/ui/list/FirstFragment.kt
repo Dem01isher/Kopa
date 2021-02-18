@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.list
+package com.example.kopashop.presentation.list
 
 
 import android.os.Bundle
@@ -28,6 +28,10 @@ class FirstFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
 
         viewModel.boots.nonNullObserve(viewLifecycleOwner){
             adapter.submitList(it)
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+
         }
 
     }

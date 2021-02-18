@@ -7,7 +7,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
-import com.example.kopashop.presentation.diffCallback.BootsDiffCallback
 
 abstract class MultiSelectionAdapter<T, Binding : ViewDataBinding>(
     private val onClick: (T) -> Unit,

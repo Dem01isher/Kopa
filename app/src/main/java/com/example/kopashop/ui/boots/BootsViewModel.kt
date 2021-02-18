@@ -1,12 +1,10 @@
 package com.example.kopashop.presentation.boots
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.kopashop.core.view_model.BaseViewModel
+import com.example.kopashop.domain.models.response.Boots
 import com.example.kopashop.domain.repositories.BootsRepository
-import com.example.kopashop.domain.responses.BootsResponse
-import com.github.ajalt.timberkt.Timber
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers

@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.auth
+package com.example.kopashop.presentation.auth
 
 import android.content.ContentValues.TAG
 import android.content.Intent

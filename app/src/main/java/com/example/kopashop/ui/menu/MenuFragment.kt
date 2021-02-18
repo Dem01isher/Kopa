@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.menu
+package com.example.kopashop.presentation.menu
 
 
 import android.os.Bundle

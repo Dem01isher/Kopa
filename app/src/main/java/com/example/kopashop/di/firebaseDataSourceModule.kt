@@ -1,7 +1,7 @@
 package com.example.kopashop.di
 
-import com.example.kopashop.data.source.remote.RemoteDataSource
-import com.example.kopashop.data.source.remote.RemoteDataSourceImpl
+import com.example.kopashop.data.source.remote.FirebaseDataSource
+import com.example.kopashop.data.source.remote.FirebaseDataSourceImpl
 import com.google.gson.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-val remoteDataSourceModule = module {
+val firebaseDataSourceModule = module {
 
     fun provideHttpClient(): OkHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
         chain.proceed(
@@ -52,8 +52,8 @@ val remoteDataSourceModule = module {
             .build()
     }
 
-    fun provideRemoteDataSource(retrofit: Retrofit): RemoteDataSource =
-        RemoteDataSourceImpl(retrofit)
+    fun provideRemoteDataSource(retrofit: Retrofit): FirebaseDataSource =
+        FirebaseDataSourceImpl(retrofit)
 
 
     fun provideLogRetrofit(
