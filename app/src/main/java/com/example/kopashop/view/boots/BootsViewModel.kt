@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.boots
+package com.example.kopashop.view.boots
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

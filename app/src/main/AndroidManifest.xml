@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KopaShop">
-        <activity android:name=".ui.activity_main.MainActivity">
+        <activity android:name=".view.activity_main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

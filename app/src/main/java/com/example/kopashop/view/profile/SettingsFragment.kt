@@ -1,16 +1,16 @@
-package com.example.kopashop.ui.profile
+package com.example.kopashop.view.profile
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.kopashop.R
 import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentSettingsBinding
-import com.example.kopashop.ui.menu.MenuFragment
-import com.example.kopashop.utils.CircularTransformation
+import com.example.kopashop.view.menu.MenuFragment
 import com.google.firebase.auth.FirebaseAuth
-import com.squareup.picasso.Picasso
 
 
 class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
@@ -29,8 +29,8 @@ class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
 
         binding.tvNumber.text = currentUser?.phoneNumber
         binding.tvEmail1.text = currentUser?.email
-        Picasso.get().load(currentUser?.photoUrl).transform(CircularTransformation())
-            .into(binding.imageUser);
+
+        Glide.with(this).load(currentUser?.photoUrl).transform(CircleCrop()).into(binding.imageUser)
 
         binding.signOutBtn.setOnClickListener {
             auth.signOut()

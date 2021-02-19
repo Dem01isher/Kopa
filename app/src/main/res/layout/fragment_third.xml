@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.active_archive.ThirdFragment">
+        tools:context=".view.active_archive.ThirdFragment">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

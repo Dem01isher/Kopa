@@ -1,12 +1,10 @@
-package com.example.kopashop.ui.auth
+package com.example.kopashop.view.auth
 
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.kopashop.R
@@ -40,7 +38,6 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
 // onDestroyView.
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -67,6 +64,7 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
             FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
+                findNavController().navigate(R.id.action_verificationFragment_to_menuFragment)
             }
 
             override fun onCancel() {
@@ -92,6 +90,8 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
             //findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
         }
 
+        //setAutoLogAppEventsEnabled(true);
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -111,7 +111,11 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
                     // Google Sign In failed, update UI appropriately
                     Log.w(TAG, "Google sign in failed", e)
                 }
-            } else {
+            } else if (requestCode == RC_SIGN_IN) {
+                mCallbackManager.onActivityResult(requestCode, resultCode, data)
+
+            }
+            else {
                 Log.w(TAG, exception.toString())
             }
 

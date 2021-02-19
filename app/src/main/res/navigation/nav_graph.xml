@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/verifNumFragment"
-        android:name="com.example.kopashop.ui.phone_auth.VerifNumFragment"
+        android:name="com.example.kopashop.view.phone_auth.VerifNumFragment"
         android:label="fragment_verif_num"
         tools:layout="@layout/fragment_verif_num">
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.example.kopashop.ui.auth.VerificationFragment"
+        android:name="com.example.kopashop.view.auth.VerificationFragment"
         android:label="fragment_verifivaction"
         tools:layout="@layout/fragment_verifivaction">
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.kopashop.ui.register.RegisterFragment"
+        android:name="com.example.kopashop.view.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.kopashop.ui.menu.MenuFragment"
+        android:name="com.example.kopashop.view.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
@@ -57,6 +57,10 @@
             app:destination="@id/verificationFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment2"
+            app:destination="@id/aboutFragment2"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -76,7 +80,12 @@
     </fragment>
     <fragment
         android:id="@+id/addPostFragment"
-        android:name="com.example.kopashop.ui.add_post.AddPostFragment"
+        android:name="com.example.kopashop.view.add_post.AddPostFragment"
         android:label="fragment_add_post"
         tools:layout="@layout/fragment_add_post" />
+    <fragment
+        android:id="@+id/aboutFragment2"
+        android:name="com.example.kopashop.view.about.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
 </navigation>

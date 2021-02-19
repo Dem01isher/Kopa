@@ -1,10 +1,7 @@
-package com.example.kopashop.ui.add_post
+package com.example.kopashop.view.add_post
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.kopashop.R
 import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.databinding.FragmentAddPostBinding

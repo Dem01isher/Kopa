@@ -18,12 +18,13 @@ class FirebaseDataSourceImpl(retrofit: Retrofit) : FirebaseDataSource {
 
                     list.add(
                         Boots(
-                        imageUrl = document["image"].toString(),
-                        title = document["title"].toString(),
-                        width = document["width"].toString().toInt(),
-                        price = document["price"].toString().toInt(),
-                        bootsLength = document["bootsLength"].toString().toInt(),
-                        material = document["material"].toString()
+                            id = document.id,
+                            imageUrl = document["image"].toString(),
+                            title = document["title"].toString(),
+                            width = document["width"].toString().toInt(),
+                            price = document["price"].toString().toInt(),
+                            bootsLength = document["bootsLength"].toString().toInt(),
+                            material = document["material"].toString()
                         )
                     )
                 }

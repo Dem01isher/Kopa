@@ -6,5 +6,6 @@ data class Boots(
     var width: Int? = null,
     var price: Int? = null,
     var bootsLength: Int? = null,
-    var material: String = ""
+    var material: String = "",
+    var id: String
 )

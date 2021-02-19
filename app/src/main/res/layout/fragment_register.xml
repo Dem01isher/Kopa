@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_layout"
-        tools:context=".ui.register.RegisterFragment">
+        tools:context=".view.register.RegisterFragment">
 
         <ImageView
             android:id="@+id/ellipse"
@@ -17,7 +17,8 @@
             android:src="@drawable/ic_ellipse"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textInputName"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,8 +55,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:textSize="14sp"
-                app:boxStrokeColor="@color/white" />
+                android:backgroundTint="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Second Name -->
@@ -72,7 +74,8 @@
             app:boxStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputName">
+            app:layout_constraintTop_toBottomOf="@+id/textInputName"
+            app:layout_constraintBottom_toTopOf="@+id/textInputTown">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextSecondName"
@@ -99,7 +102,8 @@
             app:boxStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputSecondName">
+            app:layout_constraintTop_toBottomOf="@+id/textInputSecondName"
+            app:layout_constraintBottom_toTopOf="@+id/textInputPhoneNumber">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTown"
@@ -126,7 +130,8 @@
             app:boxStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputTown">
+            app:layout_constraintTop_toBottomOf="@+id/textInputTown"
+            app:layout_constraintBottom_toTopOf="@+id/textInputVerificNum">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPhoneNum"
@@ -153,7 +158,8 @@
             app:boxStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputPhoneNumber">
+            app:layout_constraintTop_toBottomOf="@+id/textInputPhoneNumber"
+            app:layout_constraintBottom_toTopOf="@id/btnRegister">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextVerificNum"
@@ -179,7 +185,8 @@
             app:boxStrokeColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputVerificNum" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

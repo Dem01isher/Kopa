@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.phone_auth
+package com.example.kopashop.view.phone_auth
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -16,6 +16,9 @@ import java.util.concurrent.TimeUnit
 
 
 class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
+
+    override val layoutId: Int
+        get() = R.layout.fragment_verif_num
 
     private lateinit var auth: FirebaseAuth
     private lateinit var verifyId: String
@@ -51,7 +54,6 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
             findNavController().navigate(R.id.action_verifNumFragment_to_menuFragment)
         }
-
 
     }
 
@@ -129,7 +131,4 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
             signInWithPhoneAuthCredential(credential)
         }
     }
-
-    override val layoutId: Int
-        get() = R.layout.fragment_verif_num
 }

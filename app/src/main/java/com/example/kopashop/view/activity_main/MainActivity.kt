@@ -1,4 +1,4 @@
-package com.example.kopashop.ui.activity_main
+package com.example.kopashop.view.activity_main
 
 
 import com.example.kopashop.R
