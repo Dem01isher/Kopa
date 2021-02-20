@@ -15,6 +15,7 @@ import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.FacebookSdk.setAutoLogAppEventsEnabled
+import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -27,74 +28,73 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>() {
 
+    override val layoutId: Int
+        get() = R.layout.fragment_verifivaction
+
     companion object {
         private const val RC_SIGN_IN = 120
     }
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var mCallbackManager: CallbackManager
     private lateinit var googleSignInClient: GoogleSignInClient
-    // This property is only valid between onCreateView and
-// onDestroyView.
+    private val callbackManager = CallbackManager.Factory.create()
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.icPhone.setOnClickListener {
+            findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
+        }
+
+        auth = FirebaseAuth.getInstance()
+
+        //Facebook Auth
+
+        binding.icFacebook.setOnClickListener {
+            LoginManager.getInstance().logInWithReadPermissions(
+                this,
+                listOf("email", "public_profile")
+            )
+            LoginManager.getInstance().registerCallback(callbackManager, object :
+                FacebookCallback<LoginResult> {
+                override fun onSuccess(loginResult: LoginResult) {
+                    handleFacebookAccessToken(loginResult.accessToken)
+                }
+
+                override fun onCancel() {
+
+                }
+
+                override fun onError(error: FacebookException) {
+                    Log.d(TAG, "Facebook:OnError ", error)
+                }
+            })
+        }
+
+
+        //Google Auth Code
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
-
-
-        auth = FirebaseAuth.getInstance()
-
-        val user = auth.currentUser
-
-        // Initialize Facebook Login button
-        mCallbackManager = CallbackManager.Factory.create()
-
-        setAutoLogAppEventsEnabled(false);
-
-        binding.icFacebook.setReadPermissions("email", "public_profile")
-        binding.icFacebook.registerCallback(mCallbackManager, object :
-            FacebookCallback<LoginResult> {
-            override fun onSuccess(loginResult: LoginResult) {
-                handleFacebookAccessToken(loginResult.accessToken)
-                findNavController().navigate(R.id.action_verificationFragment_to_menuFragment)
-            }
-
-            override fun onCancel() {
-            }
-
-            override fun onError(error: FacebookException) {
-            }
-        })
-
-
-        binding.icPhone.setOnClickListener {
-            findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
-        }
-        /*
-        binding.icFacebook.setOnClickListener {
-            findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
-
-        }
-         */
 
         binding.icGoogle.setOnClickListener {
             signIn()
-            //findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
         }
-
-        //setAutoLogAppEventsEnabled(true);
 
     }
 
+    private fun signIn() {
+        val signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -110,12 +110,9 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
                 } catch (e: ApiException) {
                     // Google Sign In failed, update UI appropriately
                     Log.w(TAG, "Google sign in failed", e)
+                    // ...
                 }
-            } else if (requestCode == RC_SIGN_IN) {
-                mCallbackManager.onActivityResult(requestCode, resultCode, data)
-
-            }
-            else {
+            } else {
                 Log.w(TAG, exception.toString())
             }
 
@@ -139,23 +136,17 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
             }
     }
 
-    private fun signIn() {
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-
+    //Facebook code
     private fun handleFacebookAccessToken(token: AccessToken) {
-
         val credential = FacebookAuthProvider.getCredential(token.token)
         auth.signInWithCredential(credential)
-            .addOnCompleteListener() { task ->
+            .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(
                         context, "Authentication failed.",
                         Toast.LENGTH_SHORT
@@ -169,15 +160,14 @@ class VerificationFragment : BaseBindingFragment<FragmentVerifivactionBinding>()
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
-            binding.icFacebook.setOnClickListener {
-                findNavController().navigate(R.id.action_verificationFragment_to_verifNumFragment)
-            }
+            findNavController().navigate(R.id.action_verificationFragment_to_menuFragment)
         } else {
-            Toast.makeText(context, "Please sign in to continue.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Please sign in to continue", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    override val layoutId: Int
-        get() = R.layout.fragment_verifivaction
+
+
+
 }

@@ -24,9 +24,21 @@
     <string name="setEdit">Done</string>
     <string name="save">Зберегти</string>
     <string name="about"></string>
+    <string name="addPhoto">Додати фото</string>
+    <string name="size">Розмір</string>
+    <string name="model">Модель</string>
+    <string name="description_post">Опис</string>
+    <string name="price_post">Ціна</string>
+    <string name="material_post">Матеріал</string>
 
 
     <string name="signInWithPhoneNumber">Phone number</string>
     <string name="price">100$</string>
+
+    <string name="sizeOfFoot">Розміри стопи:</string>
+
+    <string name="description">Опис про товар і як довго носив кросівки чи специфічні деталі взуття. натирало чи ні.
+        чи дуло задувало. на широку ногу чи сайз не відповідає зязвленому. хвалиш взуття щоб точно купили.
+        бо подарували дві пари, а ти за літо ще ні одної не зносив.</string>
 
 </resources>

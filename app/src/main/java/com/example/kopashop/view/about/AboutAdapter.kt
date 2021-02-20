@@ -5,21 +5,28 @@ import com.bumptech.glide.Glide
 import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
+import com.example.kopashop.databinding.FragmentAboutBinding
 import com.example.kopashop.databinding.ItemPageBinding
 import com.example.kopashop.domain.models.response.Boots
 import com.example.kopashop.utils.BootsDiffCallback
 
-class AboutAdapter(private val images: ArrayList<Image>, private val onImageClickListener: OnImageClickListener) : BaseRecyclerViewAdapter<Boots, ItemPageBinding>(BootsDiffCallback()) {
+class AboutAdapter() : BaseRecyclerViewAdapter<Boots, FragmentAboutBinding>(BootsDiffCallback()) {
     override val layoutId: Int
         get() = R.layout.item_page
 
-    override fun onBindViewHolder(holder: BindingHolder<ItemPageBinding>, position: Int) {
-        val image = images[position]
+    override fun onBindViewHolder(holder: BindingHolder<FragmentAboutBinding>, position: Int) {
+
         val item = getItem(holder.adapterPosition)
+        holder.binding.title.text = item.title
+        holder.binding.bootsLength.text = item.bootsLength.toString()
+        holder.binding.material.text = item.material
+        holder.binding.price.text = item.price.toString()
+        holder.binding.width.text = item.width.toString()
+        holder.binding.description.text = item.description
 
         Glide.with(holder.itemView.context)
             .load(item.imageUrl)
-            .into(holder.binding.ivPage)
+            .into(holder.binding.ivAbout)
 
     }
 
