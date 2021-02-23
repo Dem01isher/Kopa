@@ -1,15 +1,11 @@
 package com.example.kopashop.view.about
 
-import android.view.View
-import android.widget.ImageView
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.FragmentAboutBinding
-import com.example.kopashop.databinding.ItemPageBinding
-import com.example.kopashop.domain.models.response.Boots
+import com.example.kopashop.domain.response.Boots
 import com.example.kopashop.utils.BootsDiffCallback
 
 class AboutAdapter() : BaseRecyclerViewAdapter<Boots, FragmentAboutBinding>(BootsDiffCallback()) {

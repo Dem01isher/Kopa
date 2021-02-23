@@ -32,9 +32,11 @@ class AboutFragment : BaseVMFragment<AboutViewModel, FragmentAboutBinding>() {
         super.onViewCreated(view, savedInstanceState)
         initObserves()
     }
+
     private fun initObserves() {
         viewModel.boots.nonNullObserve(viewLifecycleOwner) {
             binding.item = it
         }
     }
+
 }

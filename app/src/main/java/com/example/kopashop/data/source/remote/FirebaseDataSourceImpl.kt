@@ -1,8 +1,10 @@
 package com.example.kopashop.data.source.remote
 
-import com.example.kopashop.domain.models.response.Boots
+import com.example.kopashop.domain.models.BootsModel
+import com.example.kopashop.domain.response.Boots
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.Retrofit
 
@@ -57,7 +59,16 @@ class FirebaseDataSourceImpl(retrofit: Retrofit) : FirebaseDataSource {
             }
     }
 
-    override fun setBootsById(id: String): Single<Boots> = Single.create {
+    override fun createBoots(boots: BootsModel): Completable = Completable.create {
+        db.collection("shoes")
+            .add(boots)
+            .addOnSuccessListener { result ->
+                it.onComplete()
+            }
+            .addOnFailureListener { exception ->
+                it.onError(exception)
 
+            }
     }
+
 }

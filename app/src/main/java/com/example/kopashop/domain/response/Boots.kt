@@ -1,4 +1,4 @@
-package com.example.kopashop.domain.models.response
+package com.example.kopashop.domain.response
 
 data class Boots(
     var imageUrl: String = "",

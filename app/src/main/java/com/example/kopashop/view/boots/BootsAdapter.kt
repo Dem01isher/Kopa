@@ -5,7 +5,7 @@ import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.ListLayoutBinding
-import com.example.kopashop.domain.models.response.Boots
+import com.example.kopashop.domain.response.Boots
 import com.example.kopashop.utils.BootsDiffCallback
 
 class BootsAdapter() :

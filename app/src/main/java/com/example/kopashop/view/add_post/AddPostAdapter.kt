@@ -5,7 +5,7 @@ import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.FragmentAddPostBinding
-import com.example.kopashop.domain.models.response.Boots
+import com.example.kopashop.domain.response.Boots
 import com.example.kopashop.utils.BootsDiffCallback
 
 class AddPostAdapter : BaseRecyclerViewAdapter<Boots, FragmentAddPostBinding>(BootsDiffCallback()) {
@@ -16,6 +16,7 @@ class AddPostAdapter : BaseRecyclerViewAdapter<Boots, FragmentAddPostBinding>(Bo
         val item = getItem(holder.adapterPosition)
 
         holder.binding.etDescription.setText(item.description)
+        //holder.binding.spinnerMaterial
         Glide
             .with(holder.itemView.context)
             .load(item.imageUrl)
