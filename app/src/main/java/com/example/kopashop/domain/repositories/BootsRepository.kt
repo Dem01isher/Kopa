@@ -5,4 +5,6 @@ import io.reactivex.Single
 
 interface BootsRepository {
     fun getBoots() : Single<List<Boots>>
+    fun getBootsById(id: String) : Single<Boots>
+    fun setBootsById(id: String) : Single<Boots>
 }

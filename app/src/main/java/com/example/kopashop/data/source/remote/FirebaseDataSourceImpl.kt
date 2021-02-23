@@ -34,4 +34,30 @@ class FirebaseDataSourceImpl(retrofit: Retrofit) : FirebaseDataSource {
                 it.onError(exception)
             }
     }
+
+    override fun getBootsById(id: String): Single<Boots> = Single.create {
+        db.collection("shoes")
+            .document(id)
+            .get()
+            .addOnSuccessListener { result ->
+                val boots = Boots(
+                            id = result.id,
+                            imageUrl = result["image"].toString(),
+                            title = result["title"].toString(),
+                            width = result["width"].toString().toInt(),
+                            price = result["price"].toString().toInt(),
+                            bootsLength = result["bootsLength"].toString().toInt(),
+                            material = result["material"].toString(),
+                            description = result["description"].toString()
+                        )
+                it.onSuccess(boots)
+            }
+            .addOnFailureListener { exception ->
+                it.onError(exception)
+            }
+    }
+
+    override fun setBootsById(id: String): Single<Boots> = Single.create {
+
+    }
 }

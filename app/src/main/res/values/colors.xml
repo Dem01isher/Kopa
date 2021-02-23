@@ -11,6 +11,7 @@
     <color name="background_list">#343434</color>
     <color name="app_bar">#1F1F1F</color>
     <color name="background_menu">#505051</color>
+    <color name="user_background">#232326</color>
     <color name="list_text">#9A9A9A</color>
     <color name="list_price">#434343</color>
     <color name="image_list">#343434</color>
