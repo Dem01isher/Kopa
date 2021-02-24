@@ -45,114 +45,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/imageLayout"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:background="@color/image_list"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/add_photo">
 
-                <ImageView
-                    android:id="@+id/image1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/ic_rectangle_3_24"
-                    android:src="@drawable/ic_photo"
-                    app:layout_constraintLeft_toLeftOf="@id/imageLayout"
-                    app:layout_constraintRight_toLeftOf="@id/image2"
-                    app:layout_constraintTop_toTopOf="@id/imageLayout" />
 
-                <ImageView
-                    android:id="@+id/image2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintLeft_toRightOf="@id/image1"
-                    app:layout_constraintRight_toLeftOf="@id/image3"
-                    app:layout_constraintTop_toTopOf="@id/imageLayout" />
 
-                <ImageView
-                    android:id="@+id/image3"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/selectImage"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintLeft_toRightOf="@id/image2"
-                    app:layout_constraintRight_toLeftOf="@id/image4"
-                    app:layout_constraintTop_toTopOf="@id/imageLayout" />
-
-                <ImageView
-                    android:id="@+id/image4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/image3"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/image5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
+                    app:layout_constraintTop_toTopOf="@id/imageLayout"
                     app:layout_constraintBottom_toBottomOf="@id/imageLayout"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/image6"
-                    app:layout_constraintTop_toBottomOf="@id/image1" />
+                    />
 
-                <ImageView
-                    android:id="@+id/image6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintBottom_toBottomOf="@id/imageLayout"
-                    app:layout_constraintRight_toLeftOf="@id/image7"
-                    app:layout_constraintStart_toEndOf="@+id/image5"
-                    app:layout_constraintTop_toBottomOf="@id/image2"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <ImageView
-                    android:id="@+id/image7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/image6"
-                    app:layout_constraintTop_toBottomOf="@id/image3" />
-
-                <ImageView
-                    android:id="@+id/image8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="invisible"
-                    android:background="@drawable/ic_rectangle_3_21"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/image7"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/image4" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -171,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@id/imageLayout" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/sizeBoot"
+                android:id="@+id/layout_size"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
@@ -201,6 +110,7 @@
                     app:layout_constraintLeft_toRightOf="@id/ivBoots"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
                 <TextView
                     android:id="@+id/sizeBoots"
                     android:layout_width="wrap_content"
@@ -209,11 +119,21 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@id/lengthBoot"
+                    app:layout_constraintHorizontal_bias="0.9"
                     app:layout_constraintLeft_toRightOf="@id/arrow"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/sizeBoot" />
+                    app:layout_constraintRight_toLeftOf="@id/spinnerSize"
+                    app:layout_constraintTop_toTopOf="@id/layout_size" />
 
-
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerSize"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/size_array"
+                    app:layout_constraintBottom_toBottomOf="@+id/sizeBoots"
+                    app:layout_constraintRight_toRightOf="@id/layout_size"
+                    app:layout_constraintTop_toTopOf="@+id/sizeBoots"
+                    app:layout_constraintVertical_bias="0.523" />
 
                 <TextView
                     android:id="@+id/lengthBoot"
@@ -223,9 +143,21 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@id/width"
+                    app:layout_constraintHorizontal_bias="0.421"
                     app:layout_constraintLeft_toRightOf="@id/arrow"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/sizeBoots" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerLength"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/length"
+                    app:layout_constraintBottom_toBottomOf="@+id/lengthBoot"
+                    app:layout_constraintRight_toRightOf="@id/layout_size"
+                    app:layout_constraintTop_toTopOf="@+id/lengthBoot"
+                    app:layout_constraintVertical_bias="0.523" />
 
                 <TextView
                     android:id="@+id/width"
@@ -235,9 +167,21 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.401"
                     app:layout_constraintLeft_toRightOf="@id/arrow"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/lengthBoot" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerWidth"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/width_array"
+                    app:layout_constraintBottom_toBottomOf="@+id/width"
+                    app:layout_constraintRight_toRightOf="@id/layout_size"
+                    app:layout_constraintTop_toTopOf="@+id/width"
+                    app:layout_constraintVertical_bias="0.523" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -253,11 +197,11 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sizeBoot" />
+                app:layout_constraintTop_toBottomOf="@id/layout_size" />
 
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/spinnerModel"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            <EditText
+                android:id="@+id/etModel"
+                style="@style/Widget.AppCompat.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
@@ -281,7 +225,7 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinnerModel"
+                app:layout_constraintTop_toBottomOf="@id/etModel"
                 app:layout_constraintBottom_toTopOf="@id/spinnerMaterial"/>
 
             <androidx.appcompat.widget.AppCompatSpinner
@@ -292,6 +236,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginRight="12dp"
+                android:entries="@array/model_array"
                 android:backgroundTint="@color/image_list"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -320,6 +265,8 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginBottom="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:backgroundTint="@color/image_list"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -359,6 +306,8 @@
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="8dp"
                     android:backgroundTint="#ABB4BD"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/price"

@@ -41,23 +41,5 @@ class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
 
             ((parentFragment as NavHostFragment).parentFragment as MenuFragment).navigateToLogin()
         }
-
-        binding.editProfileBtn.setOnClickListener {
-            binding.relativeLayout.visibility = View.GONE
-            binding.editProfileLayout.visibility = View.VISIBLE
-            binding.imgUser.visibility = View.GONE
-            binding.imgEditProfile.visibility = View.VISIBLE
-        }
-
-        binding.setEditBtn.setOnClickListener {
-            binding.relativeLayout.visibility = View.VISIBLE
-            binding.editProfileLayout.visibility = View.GONE
-            binding.imgEditProfile.visibility = View.GONE
-            binding.imgUser.visibility = View.VISIBLE
-        }
-
-
     }
-
-
 }

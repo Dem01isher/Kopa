@@ -5,22 +5,23 @@ import androidx.lifecycle.MutableLiveData
 import com.example.kopashop.core.view_model.BaseViewModel
 import com.example.kopashop.domain.models.BootsModel
 import com.example.kopashop.domain.repositories.BootsRepository
-import com.example.kopashop.domain.response.Boots
-import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
-class AddPostViewModel(private val apiRepository: BootsRepository) : BaseViewModel() {
+class AddPostViewModel(private val bootsRepository: BootsRepository) : BaseViewModel() {
+
+    private val _boots = MutableLiveData<Unit>()
+    val boots : LiveData<Unit> = _boots
 
     fun createBoots(boots: BootsModel) {
-        disposables + apiRepository.createBoots(boots)
+        disposables + bootsRepository.createBoots(boots)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
-                //onSuccess = {
-
-                //},
+                onComplete = {
+                    _boots.postValue(Unit)
+                },
                 onError = {
                     timber.log.Timber.d(it)
                 }
