@@ -35,7 +35,7 @@ class FirstFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
                 ?.navigate(R.id.action_menuFragment_to_aboutFragment2, bundleOf("boots_id" to it))
         }
 
-        viewModel.boots.nonNullObserve(viewLifecycleOwner) {
+        viewModel.bootsResponse.nonNullObserve(viewLifecycleOwner) {
             adapter.submitList(it)
         }
 
@@ -44,6 +44,4 @@ class FirstFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
         }
 
     }
-
-
 }

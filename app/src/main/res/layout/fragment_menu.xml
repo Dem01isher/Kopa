@@ -9,6 +9,7 @@
         android:background="@color/background_layout"
         tools:context=".view.menu.MenuFragment">
 
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_main"
             android:layout_width="match_parent"

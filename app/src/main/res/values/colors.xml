@@ -15,6 +15,7 @@
     <color name="list_text">#9A9A9A</color>
     <color name="list_price">#434343</color>
     <color name="image_list">#343434</color>
+    <color name="background_filter">#4E4E53</color>
     <color name="button_color">#0CCDE6</color>
 
     <color name="address">#2F7092</color>

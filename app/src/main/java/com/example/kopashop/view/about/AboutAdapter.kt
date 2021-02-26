@@ -5,10 +5,10 @@ import com.example.kopashop.R
 import com.example.kopashop.core.recycler_view_adapter.BaseRecyclerViewAdapter
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.FragmentAboutBinding
-import com.example.kopashop.domain.response.Boots
+import com.example.kopashop.domain.response.BootsResponse
 import com.example.kopashop.utils.BootsDiffCallback
 
-class AboutAdapter() : BaseRecyclerViewAdapter<Boots, FragmentAboutBinding>(BootsDiffCallback()) {
+class AboutAdapter() : BaseRecyclerViewAdapter<BootsResponse, FragmentAboutBinding>(BootsDiffCallback()) {
     override val layoutId: Int
         get() = R.layout.fragment_about
 

@@ -4,11 +4,8 @@ import android.os.Bundle
 import android.view.View
 import com.example.kopashop.R
 import com.example.kopashop.core.extensions.nonNullObserve
-import com.example.kopashop.core.fragment.BaseBindingFragment
 import com.example.kopashop.core.fragment.BaseVMFragment
 import com.example.kopashop.databinding.FragmentAboutBinding
-import com.example.kopashop.view.boots.BootsViewModel
-import timber.log.Timber
 import kotlin.reflect.KClass
 
 
@@ -34,7 +31,7 @@ class AboutFragment : BaseVMFragment<AboutViewModel, FragmentAboutBinding>() {
     }
 
     private fun initObserves() {
-        viewModel.boots.nonNullObserve(viewLifecycleOwner) {
+        viewModel.bootsResponse.nonNullObserve(viewLifecycleOwner) {
             binding.item = it
         }
     }

@@ -24,7 +24,7 @@ class BootsFragment : BaseVMFragment<BootsViewModel, FragmentFirstBinding>() {
     }
 
     private fun initObserves() {
-        viewModel.boots.nonNullObserve(viewLifecycleOwner) {
+        viewModel.bootsResponse.nonNullObserve(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

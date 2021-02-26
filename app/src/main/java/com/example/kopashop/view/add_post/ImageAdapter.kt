@@ -3,12 +3,10 @@ package com.example.kopashop.view.add_post
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kopashop.core.multi_selection_adapter.MultiSelectionCallback
 import com.example.kopashop.core.recycler_view_adapter.BindingHolder
 import com.example.kopashop.databinding.SecondImageBinding
 import com.example.kopashop.databinding.SetImageBinding
 import com.example.kopashop.domain.entity.ImageEntity
-import com.example.kopashop.domain.response.Boots
 
 class ImageAdapter(private val onClick: (ImageEntity) -> Unit) :
     RecyclerView.Adapter<BindingHolder<*>>() {

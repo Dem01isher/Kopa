@@ -1,6 +1,6 @@
 package com.example.kopashop.domain.response
 
-data class Boots(
+data class BootsResponse(
     var imageUrl: String = "",
     var title: String = "",
     var width: Int? = null,
