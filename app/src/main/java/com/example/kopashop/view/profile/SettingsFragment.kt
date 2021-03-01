@@ -28,7 +28,6 @@ class SettingsFragment : BaseBindingFragment<FragmentSettingsBinding>() {
         val currentUser = auth.currentUser
 
         binding.tvNumber.text = currentUser?.phoneNumber
-        binding.tvEmail1.text = currentUser?.email
 
         Glide.with(this).load(currentUser?.photoUrl).transform(CircleCrop()).into(binding.imageUser)
 

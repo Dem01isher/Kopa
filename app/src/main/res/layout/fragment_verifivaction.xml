@@ -44,41 +44,47 @@
 
 
         <ImageButton
-            android:id="@+id/icFacebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="64dp"
-            android:background="@drawable/ic_facebook"
+            android:id="@+id/icPhone"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="#42FF00"
+            android:background="@drawable/btn_shape"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_baseline_phone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/icGoogle"
-            app:layout_constraintTop_toBottomOf="@+id/ellipse" />
+            app:layout_constraintEnd_toStartOf="@+id/icFacebook"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ellipse"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageButton
+            android:id="@+id/icFacebook"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="#44429B"
+            android:background="@drawable/btn_shape"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_facebook"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ellipse"
+            app:layout_constraintLeft_toRightOf="@id/icPhone"
+            app:layout_constraintRight_toLeftOf="@id/icGoogle"
+            app:layout_constraintVertical_bias="0.5"
+            tools:layout_editor_absoluteX="163dp" />
 
         <ImageButton
             android:id="@+id/icGoogle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_google_plus"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="#FF0000"
+            android:background="@drawable/btn_shape"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_google"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/icFacebook"
-            app:layout_constraintHorizontal_bias="0.273"
-            app:layout_constraintStart_toEndOf="@+id/icPhone"
-            app:layout_constraintTop_toBottomOf="@+id/ellipse" />
-
-        <ImageButton
-            android:id="@+id/icPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:background="@drawable/ic_phone"
-            android:text="@string/signInWithPhoneNumber"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.575"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/icGoogle"
-            app:layout_constraintTop_toBottomOf="@+id/ellipse"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ellipse"
+            app:layout_constraintStart_toEndOf="@+id/icFacebook" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

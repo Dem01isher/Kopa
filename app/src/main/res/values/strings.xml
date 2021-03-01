@@ -19,8 +19,10 @@
     <!-- Facebook -->
     <string name="facebook_app_id">5761018167257748</string>
     <string name="fb_login_protocol_scheme">fb5761018167257748</string>
+    <string name="number_edit_text">number</string>
+    <string name="code_edit_text">code</string>
 
-    <string name="signOut">Sign out</string>
+    <string name="signOut">Вийти</string>
     <string name="setEdit">Done</string>
     <string name="save">Зберегти</string>
     <string name="about"></string>

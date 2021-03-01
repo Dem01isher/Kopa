@@ -32,7 +32,7 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
         binding.vrfBtn.setOnClickListener {
             //findNavController().navigate(R.id.action_verifNumFragment_to_registerFragment)
-            if (validateMobile(binding.editTextNumber.text.toString())) {
+            if (validateMobile(binding.textInputNumber.text.toString())) {
                 signIn()
                 binding.textInputNumber.visibility = View.GONE
                 binding.vrfBtn.visibility = View.GONE
@@ -43,7 +43,7 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
         }
 
         binding.btnNext.setOnClickListener {
-            verifyCode(binding.editTextVerify.text.toString())
+            verifyCode(binding.verifyNumber.text.toString())
 
             binding.verifyNumber.visibility = View.GONE
             binding.btnNext.visibility = View.GONE
@@ -58,7 +58,7 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
     }
 
     private fun validateMobile(input: String): Boolean {
-        if (input.isNotEmpty() && Patterns.PHONE.matcher(binding.editTextNumber.text.toString())
+        if (input.isNotEmpty() && Patterns.PHONE.matcher(binding.textInputNumber.text.toString())
                 .matches()
         ) {
             Toast.makeText(
@@ -95,7 +95,7 @@ class VerifNumFragment : BaseBindingFragment<FragmentVerifNumBinding>() {
 
     private fun signIn() {
         val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber(binding.editTextNumber.text.toString())
+            .setPhoneNumber(binding.textInputNumber.text.toString())
             .setTimeout(30L, TimeUnit.SECONDS)
             .setActivity(requireActivity())
             .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

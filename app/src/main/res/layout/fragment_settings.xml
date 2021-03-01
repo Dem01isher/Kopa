@@ -135,7 +135,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Number"
+                    android:text="Контактний номер"
                     android:textColor="@color/white"
                     android:textSize="13sp" />
 
@@ -164,19 +164,19 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvTown"
+                    android:id="@+id/town"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="Місто"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/tvEmail1"
+                    android:id="@+id/tvTown"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Example"
+                    android:text="Вінниця"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
@@ -191,18 +191,23 @@
 
         </LinearLayout>
 
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signOutBtn"
-            style="@style/AppTheme.RoundedCornerMaterialButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="280dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="283dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/btn_shape"
             android:text="@string/signOut"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.163" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
