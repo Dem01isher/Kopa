@@ -13,10 +13,8 @@ import com.example.kopashop.databinding.FragmentMenuBinding
 
 class MenuFragment : BaseBindingFragment<FragmentMenuBinding>() {
 
-
-    // This property is only valid between onCreateView and
-// onDestroyView.
-
+    override val layoutId: Int
+        get() = R.layout.fragment_menu
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,6 +42,5 @@ class MenuFragment : BaseBindingFragment<FragmentMenuBinding>() {
         findNavController().navigate(R.id.action_menuFragment_to_verificationFragment)
     }
 
-    override val layoutId: Int
-        get() = R.layout.fragment_menu
+
 }
